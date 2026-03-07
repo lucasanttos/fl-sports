@@ -5,7 +5,9 @@ export const CLIENT_INFO = {
   instagram: "fl_sports", // Meu @ do Instagram
   location: "São Paulo do Potengi, RN - Rua Potengi, N• 82 - Centro", // Minha cidade
   
-  // 👉 CORRIGIDO: Agora o link é puro, sem os colchetes!
+  
+  
+  // 👉 WHATSAPP
   whatsappLink: "https://wa.me/5584992148040?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20FL_SPORTS"
 };
 
@@ -25,32 +27,6 @@ const standardColors = [
 // Para adicionar imagens, eu coloco a foto na pasta "public/imagens/produtos/" 
 // e escrevo o caminho ali em imageUrl (ex: "/imagens/produtos/minhafoto.jpg")
 export const PRODUCTS = [
-  // PERFORMANCE
- // { id: 1, name: "Tênis FL Pro X1", price: 899.00, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: shoeSizes, colors: standardColors },
-  //{ id: 2, name: "Short de Compressão Elite", price: 149.90, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
-  //{ id: 3, name: "Top Fitness High Impact", price: 129.90, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
-  //{ id: 13, name: "Camiseta Térmica Segunda Pele", price: 89.90, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
-  //{ id: 14, name: "Meia de Alta Performance", price: 59.90, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: ['P/M', 'G/GG'], colors: standardColors },
-  //{ id: 21, name: "Tênis Runner Carbon", price: 1199.00, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: shoeSizes, colors: standardColors },
- // { id: 22, name: "Manguito Térmico UV", price: 69.90, category: "Performance", slug: "performance", imageUrl: "/imagens/produtos/aaa.webp", sizes: ['P/M', 'G/GG'], colors: standardColors },
-  
-  // STREETWEAR
- // { id: 4, name: "Jaqueta Corta-Vento Stealth", price: 459.00, category: "Streetwear", slug: "streetwear", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
-  //{ id: 5, name: "Calça Cargo Urban", price: 289.00, category: "Streetwear", slug: "streetwear", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: [{name: 'Preto', hex: '#18181b'}, {name: 'Khaki', hex: '#d4d4d8'}] },
-  //{ id: 6, name: "Moletom Oversized Logo", price: 349.00, category: "Streetwear", slug: "streetwear", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
- // { id: 15, name: "T-Shirt Heavy Cotton Boxy", price: 169.00, category: "Streetwear", slug: "streetwear", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: standardColors },
-  //{ id: 16, name: "Gorro Beanie Classic Preto", price: 79.90, category: "Streetwear", slug: "streetwear", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: [{name: 'Preto', hex: '#18181b'}] },
- // { id: 23, name: "Jaqueta Puffer Premium", price: 599.00, category: "Streetwear", slug:"streetwear" , imageUrl:"/imagens/produtos/aaa.webp" , sizes : clothingSizes , colors : standardColors },
-  //{ id : 24 , name : "Óculos de Sol Square Edge" , price : 249.00 , category : "Streetwear" , slug : "streetwear" , imageUrl : "/imagens/produtos/aaa.webp" , sizes : oneSize , colors : [{name : 'Preto' , hex : '#18181b'}] },
-  
-  // ACESSÓRIOS
-  //{ id: 7, name: "Mochila Urban Tactical", price: 329.00, category: "Acessórios", slug: "acessorios", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: standardColors },
-  //{ id: 8, name: "Boné Dad Hat Minimal", price: 99.90, category: "Acessórios", slug: "acessorios", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: standardColors },
-  //{ id: 9, name: "Garrafa Térmica 1L Titanium", price: 159.00, category: "Acessórios", slug: "acessorios", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: [{name: 'Prata', hex: '#e4e4e7'}, {name: 'Preto', hex: '#18181b'}] },
-  //{ id: 17, name: "Bolsa Transversal Chest Bag", price: 199.00, category: "Acessórios", slug: "acessorios", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: standardColors },
- // { id: 18, name: "Corda de Pular Speed Rope Pro", price: 89.90, category: "Acessórios", slug: "acessorios", imageUrl:"/imagens/produtos/aaa.webp" , sizes : oneSize , colors : [{name : 'Preto' , hex : '#18181b'}] },
- // { id: 25, name: "Kit Faixas Elásticas Pro", price: 129.00, category:"Acessórios" , slug:"acessorios" , imageUrl:"/imagens/produtos/aaa.webp" , sizes : oneSize , colors : [{name : 'Multicolor' , hex : '#ef4444'}] },
-  //{ id : 26 , name : "Pochete Crossbody Premium" , price : 179.00 , category : "Acessórios" , slug : "acessorios" , imageUrl : "/imagens/produtos/aaa.webp" , sizes : oneSize , colors : standardColors },
   
   // CAMISAS DE TIME
   { id: 10, name: "Camisa Seleção Brasileira 24/25", price: 349.90, category: "Camisas de Time", slug: "camisas-de-time", imageUrl: "/imagens/produtos/aaa.webp", sizes: clothingSizes, colors: [{name: 'Amarelo', hex: '#facc15'}] },
@@ -60,7 +36,7 @@ export const PRODUCTS = [
   { id: 20, name: "Camisa Man. City Away 24/25", price: 349.90, category:"Camisas de Time" , slug:"camisas-de-time" , imageUrl:"/imagens/produtos/aaa.webp" , sizes : clothingSizes , colors : [{name : 'Azul Celeste' , hex : '#38bdf8'}] },
   { id: 27, name:"Camisa PSG Home 24/25" , price :349.90 , category :"Camisas de Time" , slug :"camisas-de-time" , imageUrl :" /imagens/produtos/aaa.webp" , sizes :clothingSizes , colors :[{name :"Azul Marinho" , hex :"#1e3a8a"}] },
   { id : 28 , name :"Camisa Bayern Away 24/25" , price :349.90 , category :"Camisas de Time" , slug :"camisas-de-time" , imageUrl :" /imagens/produtos/aaa.webp" , sizes :clothingSizes , colors :[{name :"Preto" , hex :"#18181b"}] },
-    
+
   // tenis
   { id: 9, name: "Bolsa Transversal Chest Bag", price: 199.00, category: "Tenis", slug: "Tenis", imageUrl: "/imagens/produtos/aaa.webp", sizes: oneSize, colors: standardColors },
 
@@ -68,8 +44,6 @@ export const PRODUCTS = [
 
 // 👉 AQUI EU CRIO E EDITO AS MINHAS COLEÇÕES/CATEGORIAS
 export const CATEGORIES = [
- //{ id: 'esportes', slug: "performance", title: "Performance", subtitle: "A engenharia do corpo", imgColor: "bg-zinc-900" },
- // { id: 'moda', slug: "streetwear", title: "Streetwear", subtitle: "As ruas como palco", imgColor: "bg-zinc-800" },
   { id: 'camisas', slug: "camisas-de-time", title: "Camisas de Times", subtitle: "O manto sagrado", imgColor: "bg-zinc-700" },
   //{ id: 'acessorios', slug: "acessorios", title: "Acessórios", subtitle: "O detalhe definitivo", imgColor: "bg-black" },
 { id: 'Tenis', slug: "Tenis", title: "Tenis", subtitle: "O conforto absoluto", imgColor: "bg-zinc-900" },
@@ -89,6 +63,8 @@ export const CATEGORIES = [
 
 
 ];
+
+
 
 // Formatação do R$
 export const formatPrice = (value: number) => {

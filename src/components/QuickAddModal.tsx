@@ -6,6 +6,7 @@ import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/data/config';
 
 export default function QuickAddModal() {
+  
   const { quickAddProduct, setQuickAddProduct, addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [selectedColor, setSelectedColor] = useState<string>('');
