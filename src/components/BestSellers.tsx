@@ -15,9 +15,15 @@ export default function BestSellers() {
       try {
         const stats = JSON.parse(localStorage.getItem('fl_sports_clicks') || '{"clicks":{}}');
         const clicks = stats.clicks || {};
-        if (Object.keys(clicks).length === 0) { clicks[1] = 15; clicks[10] = 12; clicks[4] = 9; clicks[7] = 5; }
+         if (Object.keys(clicks).length === 0) { clicks[1] = 15; clicks[10] = 12; clicks[4] = 9; clicks[7] = 5; }
         const sortedIds = Object.keys(clicks).sort((a, b) => clicks[b] - clicks[a]);
-        let sortedProducts = sortedIds.map(id => PRODUCTS.find(p => p.id === parseInt(id))).filter((p): p is typeof PRODUCTS[0] => p !== undefined).slice(0, 8);
+        
+        let sortedProducts = sortedIds
+          .map(id => PRODUCTS.find(p => p.id === parseInt(id)))
+          .filter((p): p is typeof PRODUCTS[0] => p !== undefined)
+          .slice(0, 8);
+        
+        // Aqui eu garanto que não existam duplicatas no array de estado
         setTopProducts([...new Set([...sortedProducts, ...PRODUCTS])].slice(0, 8));
       } catch (e) {
         setTopProducts(PRODUCTS.slice(0, 8));
@@ -58,7 +64,8 @@ export default function BestSellers() {
         <div className="relative -mx-6 md:mx-0 px-6 md:px-0">
           <div ref={scrollRef} className="flex gap-6 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth pb-8">
             {topProducts.map((product, index) => (
-              <div key={product.id} className="min-w-[85vw] sm:min-w-[45vw] md:min-w-[30vw] lg:min-w-[22vw] snap-start group cursor-pointer shrink-0">
+            
+              <div key={`best-seller-${product.id}-${index}`} className="min-w-[85vw] sm:min-w-[45vw] md:min-w-[30vw] lg:min-w-[22vw] snap-start group cursor-pointer shrink-0">
                 <div className="aspect-[3/4] bg-zinc-900 mb-6 relative overflow-hidden rounded-sm">
                   {product.imageUrl ? (
                      <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -67,7 +74,6 @@ export default function BestSellers() {
                   )}
                   <div className="absolute top-4 left-4 bg-white text-black w-8 h-8 flex items-center justify-center font-black text-sm z-10 shadow-lg rounded-sm">#{index + 1}</div>
                   
-                  {/* 👉 CORREÇÃO AQUI: translate-y-0 no mobile, e lg:translate-y-full no desktop */}
                   <div className="absolute bottom-0 left-0 w-full p-4 transform translate-y-0 lg:translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]">
                     <button onClick={() => setQuickAddProduct(product)} className="w-full bg-white text-black py-4 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 transition-colors rounded-sm shadow-2xl lg:shadow-none">Opções</button>
                   </div>
