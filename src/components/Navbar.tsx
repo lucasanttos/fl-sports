@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Menu, X, Search, User, MessageCircle } from 'lucide-react';
+import { ShoppingBag, Menu, X, Search, User } from 'lucide-react';
 import { CLIENT_INFO } from '@/data/config';
 import { useCart } from '@/context/CartContext';
 
@@ -35,6 +35,14 @@ export default function Navbar() {
     }
   };
 
+  // 👉 Lógica adicionada: Clicar na logo volta pro topo se estiver na Home
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -52,11 +60,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-2 -ml-2 hover:opacity-70 transition-opacity"><Menu size={24} /></button>
           
-          <Link href="/" className="text-2xl font-black tracking-tighter uppercase cursor-pointer">
+          {/* 👉 Logo com evento de onClick embutido */}
+          <Link href="/" onClick={handleLogoClick} className="text-2xl font-black tracking-tighter uppercase cursor-pointer">
             {CLIENT_INFO.name}
           </Link>
 
-          {/* 👉 Aqui eu edito os links que aparecem no menu de quem acessa pelo computador */}
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-widest uppercase">
             <Link href="/categorias" className="relative group overflow-hidden">
               <span className="hover:text-zinc-500 transition-colors duration-300">Coleções</span>
@@ -99,7 +107,7 @@ export default function Navbar() {
         </div>
       </header>
       
-      {/* 👉 Aqui eu edito os links que aparecem no menu de quem acessa pelo celular */}
+      {/* Menu Mobile */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div initial={{ opacity: 0, x: '-100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '-100%' }} transition={{ type: 'tween', duration: 0.4 }} className="fixed inset-0 z-[60] bg-black text-white p-6 flex flex-col">

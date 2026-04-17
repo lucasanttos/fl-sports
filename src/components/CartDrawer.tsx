@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, MessageCircle } from 'lucide-react';
+import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, MessageCircle, ChevronDown } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { CLIENT_INFO, formatPrice, CARD_FEE_PERCENTAGE } from '@/data/config';
 
@@ -20,7 +20,6 @@ export default function CartDrawer() {
     if (!isCartOpen) setIsCheckout(false);
   }, [isCartOpen]);
 
-  // 👉 LÓGICA DE ACRÉSCIMO DA MAQUININHA
   const isCardPayment = paymentMethod.includes('Cartão');
   const cardFeeAmount = isCardPayment ? cartTotal * (CARD_FEE_PERCENTAGE / 100) : 0;
   const finalTotal = cartTotal + cardFeeAmount;
@@ -35,7 +34,6 @@ export default function CartDrawer() {
     
     text += `\n*Subtotal:* ${formatPrice(cartTotal)}\n`;
     
-    // 👉 Adiciona a taxa no WhatsApp se for cartão
     if (isCardPayment) {
       text += `*Acréscimo Cartão (${CARD_FEE_PERCENTAGE}%):* ${formatPrice(cardFeeAmount)}\n`;
     }
@@ -112,7 +110,7 @@ export default function CartDrawer() {
 
                       <div className="space-y-4">
                         <p className="text-sm font-bold text-black uppercase tracking-widest">Identificação</p>
-                        <input required type="text" value={buyerName} onChange={(e) => setBuyerName(e.target.value)} placeholder="Nome de quem está comprando" className="w-full border border-zinc-300 p-3 text-sm focus:border-black outline-none rounded-sm transition-all" />
+                        <input required type="text" value={buyerName} onChange={(e) => setBuyerName(e.target.value)} placeholder="Nome Completo" className="w-full border border-zinc-300 p-3 text-sm focus:border-black outline-none rounded-sm transition-all" />
                       </div>
 
                       <div className="space-y-4 border-t border-zinc-200 pt-6">
@@ -127,13 +125,18 @@ export default function CartDrawer() {
 
                       <div className="space-y-4 border-t border-zinc-200 pt-6">
                         <p className="text-sm font-bold text-black uppercase tracking-widest">Método de Pagamento</p>
-                        <select required value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} className="w-full border border-zinc-300 p-3 text-sm focus:border-black outline-none rounded-sm transition-all bg-white">
-                          <option value="" disabled>Selecione uma opção</option>
-                          <option value="PIX">PIX</option>
-                          <option value="Cartão de Crédito">Cartão de Crédito</option>
-                          <option value="Cartão de Débito">Cartão de Débito</option>
-                          <option value="Dinheiro">Dinheiro (Espécie)</option>
-                        </select>
+                        {/* 👉 ADICIONADO: 'relative' no container e 'appearance-none' no select para visual customizado Premium */}
+                        <div className="relative">
+                          <select required value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} className="w-full border border-zinc-300 p-3 pr-10 text-sm focus:border-black outline-none rounded-sm transition-all bg-white appearance-none cursor-pointer">
+                            <option value="" disabled>Selecione uma opção</option>
+                            <option value="PIX">PIX</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
+                            <option value="Dinheiro">Dinheiro (Espécie)</option>
+                          </select>
+                          <ChevronDown size={18} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 pointer-events-none" />
+                        </div>
+                        
                         {isCardPayment && (
                           <p className="text-xs text-red-500 font-bold mt-1 animate-pulse">
                             ⚠️ Acréscimo de {CARD_FEE_PERCENTAGE}% da maquininha aplicado.
@@ -146,7 +149,6 @@ export default function CartDrawer() {
               )}
             </div>
 
-            {/* 👉 RODAPÉ DO CARRINHO COM O VALOR E AS TAXAS */}
             {cartItems.length > 0 && (
               <div className="border-t border-zinc-200 p-6 bg-zinc-50">
                 <div className="flex justify-between items-center mb-1">

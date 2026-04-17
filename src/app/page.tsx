@@ -47,7 +47,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {CATEGORIES.map((cat, index) => (
+            {CATEGORIES.slice(0, 6).map((cat, index) => (
               <ScrollReveal key={cat.id} delay={index * 0.1}>
                 <Link href={`/categoria/${cat.slug}`} className="block group relative aspect-[4/5] overflow-hidden bg-zinc-100 cursor-pointer rounded-sm">
                   <div className={`absolute inset-0 ${cat.imgColor} transition-transform duration-1000 group-hover:scale-105 flex items-center justify-center`}><span className="text-white font-black text-4xl opacity-10 uppercase tracking-tighter transform -rotate-45 text-center px-4 select-none">{cat.title}</span></div>
@@ -71,7 +71,7 @@ export default function Home() {
             <div className="text-center mb-16"><h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">Catálogo</h2><p className="text-zinc-500 font-medium tracking-wide">Selecione seu arsenal. Adicione ao carrinho e conclua com exclusividade.</p></div>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {PRODUCTS.slice(0,8).map((product, index) => (
+            {PRODUCTS.slice(0,6).map((product, index) => (
               <ScrollReveal key={product.id} delay={(index % 4) * 0.1} direction="up">
                 <div className="group cursor-pointer">
                   <div className="aspect-[3/4] bg-zinc-200 mb-6 relative overflow-hidden rounded-sm">
