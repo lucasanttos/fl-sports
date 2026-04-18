@@ -5,7 +5,7 @@ export const CLIENT_INFO = {
   instagram: "fl_sports", 
   location: "São Paulo do Potengi, RN", 
   //  Link limpo e direto para o WhatsApp
-  whatsappLink: "https://wa.me/5584992148040?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20FL_SPORTS"
+whatsappLink: "https://wa.me/5584992148040?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20FL_SPORTS"
 };
 
 // 👉 AQUI EU CONFIGURO A TAXA DA MAQUININHA DE CARTÃO
