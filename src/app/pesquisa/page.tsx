@@ -1,11 +1,14 @@
 "use client";
+// 👉 1. Importamos o Suspense do React
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { PRODUCTS, formatPrice } from '@/data/config';
 import { useCart } from '@/context/CartContext';
 import ScrollReveal from '@/components/ScrollReveal';
 import { ShoppingBag } from 'lucide-react';
 
-export default function PesquisaPage() {
+// 👉 2. Mudamos o nome da função principal para "PesquisaConteudo"
+function PesquisaConteudo() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q')?.toLowerCase() || '';
   const { setQuickAddProduct } = useCart();
@@ -16,7 +19,7 @@ export default function PesquisaPage() {
   );
 
   return (
-    <div className="py-24 max-w-7xl mx-auto px-6 md:px-12 min-h-screen">
+    <div className="py-24 max-w-7xl mx-auto px-6 md:px-12 min-h-screen text-white">
       <ScrollReveal>
         <div className="mb-16 border-b border-zinc-200 pb-12">
           <p className="text-zinc-500 font-bold uppercase tracking-widest text-sm mb-2">Resultados para</p>
@@ -53,5 +56,17 @@ export default function PesquisaPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function PesquisaPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen py-32 flex items-center justify-center bg-white text-black">
+        <p className="font-bold uppercase tracking-widest text-zinc-500 animate-pulse">Carregando resultados...</p>
+      </div>
+    }>
+      <PesquisaConteudo />
+    </Suspense>
   );
 }
