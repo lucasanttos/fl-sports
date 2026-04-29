@@ -69,14 +69,3 @@ src/context/: Contexto global do Carrinho (CartContext.tsx).
 src/data/: Arquivo "Fonte da Verdade" (config.ts) contendo informações da loja, banco de produtos e regras de negócio.
 
 public/: Imagens, favicons e recursos estáticos.
-
-🌐 Deploy (Colocando no ar)
-Este projeto está pronto para ser publicado gratuitamente na Vercel.
-Basta conectar este repositório no painel da Vercel e o deploy será feito automaticamente em segundos (graças ao suporte nativo ao Next.js e ao Suspense configurado nas páginas de busca).
-
-Feito  e focado na performance por UiCode.dev
-
-
-**Dica Extra:** Se quiser deixar ele 100% perfeito no seu GitHub, lembre-se de trocar o link `https://github.com/SEU_USUARIO/fl-sports.git` no Passo 1 pelo link real do seu repositório! 
-
-Ficou muito profissional. O que achou?
