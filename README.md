@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ FL Sports - E-Commerce Premium
 
-## Getting Started
+Bem-vindo ao repositório oficial da **FL Sports**, um e-commerce de alta conversão focado em vestuário e equipamentos esportivos de alta performance e streetwear de vanguarda. 
 
-First, run the development server:
+Este projeto foi desenhado com foco em **Performance, SEO e Experiência do Usuário (UX)**, culminando em um fluxo de checkout direto via WhatsApp para maximizar o relacionamento com o cliente.
 
-```bash
+---
+
+## 🚀 Tecnologias Utilizadas
+
+O projeto foi construído utilizando as ferramentas mais modernas do ecossistema front-end:
+
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) para segurança e tipagem estática.
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/) para design responsivo e customizado.
+* **Animações:** [Framer Motion](https://www.framer.com/motion/) para transições fluidas e feedback visual Sênior.
+* **Ícones:** [Lucide React](https://lucide.dev/)
+* **Analytics:** `@next/third-parties/google` (Google Analytics otimizado)
+
+---
+
+## ✨ Funcionalidades Principais
+
+- **🛍️ Catálogo Dinâmico:** Produtos organizados por categorias (Performance, Streetwear, Combos, etc.) utilizando rotas dinâmicas `[slug]`.
+- **🛒 Carrinho Inteligente (Context API):** Gerenciamento global de estado do carrinho. Adição, remoção e alteração de quantidades em tempo real.
+- **💳 Cálculo de Taxas Automático:** Sistema que identifica o método de pagamento selecionado e aplica a taxa da maquininha (ex: Cartão de Crédito) no subtotal.
+- **📱 Checkout via WhatsApp:** O carrinho gera automaticamente um resumo completo do pedido (Itens, Cores, Tamanhos, Endereço e Total com taxas) e envia diretamente para o WhatsApp do lojista.
+- **🔍 Busca Integrada:** Pesquisa em tempo real de produtos no catálogo.
+- **💨 Modal Quick Add:** Visualização rápida de detalhes do produto sem precisar sair da página atual.
+- **🎯 SEO Otimizado:** Meta tags dinâmicas e Open Graph (para compartilhamento perfeito com foto no Instagram/WhatsApp) configurados.
+
+---
+
+## 🛠️ Como rodar o projeto localmente
+
+Siga os passos abaixo para testar o projeto no seu computador:
+
+### Pré-requisitos
+* Ter o [Node.js](https://nodejs.org/) instalado.
+* Ter o Git instalado.
+
+### Passo a passo
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/SEU_USUARIO/fl-sports.git](https://github.com/SEU_USUARIO/fl-sports.git)
+Entre na pasta do projeto:
+
+Bash
+cd fl-sports
+Instale as dependências:
+
+Bash
+npm install
+Inicie o servidor de desenvolvimento:
+
+Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Acesse no navegador:
+Abra http://localhost:3000 para ver o site em funcionamento.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📂 Estrutura de Pastas (Resumo)
+src/app/: Contém as rotas e páginas da aplicação (Home, Pesquisa, Categorias).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+src/components/: Componentes reutilizáveis (Navbar, Footer, Modal, ScrollReveal).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+src/context/: Contexto global do Carrinho (CartContext.tsx).
 
-## Learn More
+src/data/: Arquivo "Fonte da Verdade" (config.ts) contendo informações da loja, banco de produtos e regras de negócio.
 
-To learn more about Next.js, take a look at the following resources:
+public/: Imagens, favicons e recursos estáticos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🌐 Deploy (Colocando no ar)
+Este projeto está pronto para ser publicado gratuitamente na Vercel.
+Basta conectar este repositório no painel da Vercel e o deploy será feito automaticamente em segundos (graças ao suporte nativo ao Next.js e ao Suspense configurado nas páginas de busca).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Feito  e focado na performance por UiCode.dev
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Dica Extra:** Se quiser deixar ele 100% perfeito no seu GitHub, lembre-se de trocar o link `https://github.com/SEU_USUARIO/fl-sports.git` no Passo 1 pelo link real do seu repositório! 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ficou muito profissional. O que achou?
