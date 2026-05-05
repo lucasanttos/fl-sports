@@ -358,7 +358,7 @@ export const PRODUCTS = [
     name: "Short sarja importado",
     price: 70.00,
     category: "Short Sarja",
-    slug: "short-sarja-importado",
+    slug: "short-sarja",
     images: [
       "/imagens/produtos/short-sarja.jpeg"
     ],
