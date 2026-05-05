@@ -103,7 +103,6 @@ export default function CartDrawer() {
                             className="flex gap-4 border-b border-zinc-100 pb-6"
                           >
                             <div className="w-20 h-24 bg-zinc-100 flex items-center justify-center shrink-0 rounded-sm">
-                              {/* 👉 ATUALIZADO: usa images[0] */}
                               {item.images && item.images.length > 0 ? (
                                 <img 
                                   src={item.images[0]} 
