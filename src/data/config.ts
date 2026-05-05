@@ -70,8 +70,6 @@ export const PRODUCTS = [
     slug: "camisas-de-time",
     images: [
       "/imagens/produtos/camisa-time-brasil.jpeg",
-            "/imagens/produtos/aaa.webp"
-
     ],
     sizes: clothingSizes,
     colors: [{ name: "Amarelo", hex: "#facc15" }]

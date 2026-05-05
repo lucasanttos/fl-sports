@@ -36,8 +36,8 @@ function PesquisaConteudo() {
             <ScrollReveal key={product.id} delay={(index % 4) * 0.1} direction="up">
               <div className="group cursor-pointer">
                 <div className="aspect-[3/4] bg-zinc-100 mb-6 relative overflow-hidden rounded-sm">
-                  {product.imageUrl ? (
-                     <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  {product.images ? (
+                     <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   ) : (
                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-1000 group-hover:scale-105"><ShoppingBag className="text-zinc-300 w-16 h-16" /></div>
                   )}

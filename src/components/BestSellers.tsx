@@ -77,16 +77,20 @@ export default function BestSellers() {
         </ScrollReveal>
 
         <div className="relative -mx-2 px-2">
-          <div ref={scrollRef} className="flex gap-2 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth pb-4">
+          <div
+            ref={scrollRef}
+            className="flex gap-2 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth pb-4"
+          >
             {topProducts.map((product, index) => (
               <div
                 key={`best-seller-${product.id}-${index}`}
                 className="w-[340px] sm:w-[180px] md:w-[220px] lg:w-[340px] flex-none snap-start group cursor-pointer"
               >
                 <div className="aspect-[3/4] bg-zinc-900 mb-2.5 relative overflow-hidden rounded-sm w-full">
-                  {product.imageUrl ? (
+
+                  {product.images && product.images.length > 0 ? (
                     <img
-                      src={product.imageUrl}
+                      src={product.images[0]}
                       alt={product.name}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
@@ -95,10 +99,13 @@ export default function BestSellers() {
                       <ShoppingBag className="text-zinc-600 w-8 h-8" />
                     </div>
                   )}
+
+                  {/* Badge de ranking */}
                   <div className="absolute top-2 left-2 bg-white text-black w-5 h-5 flex items-center justify-center font-black text-[10px] z-10 rounded-sm shadow-sm">
                     #{index + 1}
                   </div>
 
+                  {/* Botão de opções */}
                   <div className="absolute bottom-0 left-0 w-full p-2 transform translate-y-0 lg:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-[0.16,1,0.3,1]">
                     <button
                       onClick={() => setQuickAddProduct(product)}
@@ -108,11 +115,14 @@ export default function BestSellers() {
                     </button>
                   </div>
                 </div>
+
                 <div className="flex flex-col pt-1.5">
                   <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider line-clamp-1 mb-0.5">
                     {product.category}
                   </span>
-                  <h4 className="text-xs sm:text-sm font-bold tracking-tight line-clamp-1 mb-0.5">{product.name}</h4>
+                  <h4 className="text-xs sm:text-sm font-bold tracking-tight line-clamp-1 mb-0.5">
+                    {product.name}
+                  </h4>
                   <p className="text-xs text-zinc-400">{formatPrice(product.price)}</p>
                 </div>
               </div>
