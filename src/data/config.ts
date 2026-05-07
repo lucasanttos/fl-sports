@@ -80,7 +80,7 @@ export const PRODUCTS = [
   {
     id: 35,
     name: "Short Tactel com Elastano",
-    price: 70.00,
+    price: 35.00,
     category: "short-tactel",
     slug: "short-tactel",
     images: [
@@ -100,7 +100,7 @@ export const PRODUCTS = [
   {
     id: 36,
     name: "Short Duplo Feminino",
-    price: 70.00,
+    price: 45.00,
     category: "short-duplo-fem",
     slug: "short-duplo-fem",
     images: [
@@ -116,11 +116,11 @@ export const PRODUCTS = [
     ]
   },
 
-  // SHORT NIKE POLIAMIDA
+  // SHORT  POLIAMIDA
   {
     id: 37,
     name: "Short Nike Poliamida",
-    price: 70.00,
+    price: 45.00,
     category: "short-dry-fit",
     slug: "short-dry-fit",
     images: [
@@ -133,13 +133,35 @@ export const PRODUCTS = [
       { name: "Azul claro", hex: "#3b82f6" },
       { name: "Branco", hex: "#ffffff" }
     ]
+    
+  },
+   {
+    id: 40,
+    name: "Short Poliamida",
+    price: 45.00,
+    category: "short-dry-fit",
+    slug: "short-dry-fit",
+    images: [
+      "/imagens/produtos/Short poliamida .jpeg"
+    ],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Rosa Pink", hex: "#e879f9" },
+      { name: "Rosa claro", hex: "#f9a8d4" },
+      { name: "Preto", hex: "#000000" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Verde escuro", hex: "#14532d" },
+      { name: "Verde claro", hex: "#22c55e" },
+      { name: "Azul royal", hex: "#1e3a8a" },
+      { name: "Azul claro", hex: "#3b82f6" }
+    ]
   },
 
   // BLUSA POLIAMIDA
   {
     id: 38,
     name: "Blusa Poliamida",
-    price: 70.00,
+    price: 45.00,
     category: "conjunto-feminino-poliamida",
     slug: "blusa-feminina",
     images: [
@@ -159,26 +181,41 @@ export const PRODUCTS = [
     ]
   },
 
-  // CAMISA ADIDAS TRÊS LISTRAS
+  // CAMISA dry fit
   {
     id: 39,
     name: "Camisa Adidas Três Listras",
-    price: 70.00,
+    price: 35.00,
     category: "camisa-dry-fit",
     slug: "camisa-dry-fit",
     images: [
-      "/imagens/produtos/CAMISA ADIDAS TRÊS LISTRAS .jpeg"
+      "/imagens/produtos/camisa-adidas-3listras.jpeg"
     ],
-    sizes: ["P", "M", "G", "GG"],
+    sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
       { name: "Branco", hex: "#ffffff" },
-      { name: "Azul marinho", hex: "#1e40af" },
-      { name: "Azul bebê", hex: "#dbeafe" },
-      { name: "Vermelho", hex: "#ef4444" },
-      { name: "Verde militar", hex: "#4d7c0f" },
-      { name: "Rosa", hex: "#f472b6" },
-      { name: "Verde limão", hex: "#a8f07a" }
+      { name: "royal", hex: "#1e40af" },
+      { name: "Bege", hex: "#F5F5DC" },
+      { name: "Rosa", hex: "#f187ec" },
+      { name: "lilás", hex: "#C8A2C8" },
+      { name: "Azul claro", hex: "#4fd0f7" },
+    ]
+  },
+  {
+    id: 40,
+    name: "Camisa Nike Básica",
+    price: 35.00,
+    category: "camisa-dry-fit",
+    slug: "camisa-dry-fit",
+    images: ["/imagens/produtos/camisa-dfit-nike-basico.jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#000000" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Azul Marinho", hex: "#22336d" },
+      { name: "Bege", hex: "#F5F5DC" },
+      { name: "Vinho", hex: "#612326" },
     ]
   },
 
@@ -186,7 +223,7 @@ export const PRODUCTS = [
   {
     id: 50,
     name: "Camisa Texturizada Diesel",
-    price: 60.00,
+    price: 70.00,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
     images: [
@@ -206,7 +243,7 @@ export const PRODUCTS = [
   {
     id: 51,
     name: "Camisa Texturizada Hugo Boss",
-    price: 60.00,
+    price: 70.00,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
     images: [
@@ -226,7 +263,7 @@ export const PRODUCTS = [
   {
     id: 52,
     name: "Camisa Texturizada Ralph Lauren",
-    price: 60.00,
+    price: 70.00,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
     images: [
@@ -244,28 +281,6 @@ export const PRODUCTS = [
     ]
   },
 
-  // SHORT POLIAMIDA
-  {
-    id: 40,
-    name: "Short Poliamida",
-    price: 70.00,
-    category: "short-dry-fit",
-    slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/Short poliamida .jpeg"
-    ],
-    sizes: ["M", "G", "GG"],
-    colors: [
-      { name: "Rosa Pink", hex: "#e879f9" },
-      { name: "Rosa claro", hex: "#f9a8d4" },
-      { name: "Preto", hex: "#000000" },
-      { name: "Branco", hex: "#ffffff" },
-      { name: "Verde escuro", hex: "#14532d" },
-      { name: "Verde claro", hex: "#22c55e" },
-      { name: "Azul royal", hex: "#1e3a8a" },
-      { name: "Azul claro", hex: "#3b82f6" }
-    ]
-  },
 
   // CAMISA PLUS 
   {
@@ -357,7 +372,7 @@ export const PRODUCTS = [
   {
     id: 70,
     name: "Short sarja importado",
-    price: 70.00,
+    price: 80.00,
     category: "Short Sarja",
     slug: "short-sarja",
     images: [
@@ -373,6 +388,120 @@ export const PRODUCTS = [
       { name: "Cinza Médio", hex: "#808080" }
     ]
   },
+
+  // short dryfit
+{
+    id: 100,
+    name: "Short Adidas Basico",
+    price: 35.00,
+    category: "Short Dry Fit",
+    slug: "short-dry-fit",
+    images: [
+      "/imagens/produtos/short-adidas-basico-branco.jpeg"
+    ],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#1a1a1a" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Cinza", hex: "#727272" },
+
+    ]
+  },
+  {
+    id: 101,
+    name: "Short Adidas 3 listras",
+    price: 35.00,
+    category: "Short Dry Fit",
+    slug: "short-dry-fit",
+    images: [
+      "/imagens/produtos/short-adidas-3listras.jpeg"
+    ],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#1a1a1a" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "grafite", hex: "#5f5f5f" },
+
+    ]
+  },
+   {
+    id: 103,
+    name: "Short Nike Básico",
+    price: 35.00,
+    category: "Short Dry Fit",
+    slug: "short-dry-fit",
+    images: [
+      "/imagens/produtos/short-nike-basico.jpeg"
+    ],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Azul marinho", hex: "#041d4d" },
+      { name: "Preto", hex: "#000000" },
+      { name: "Cinza Prata", hex: "#5f5f5f" },
+            { name: "grafite", hex: "#4d4848" },
+      { name: "branco", hex: "#ffffff" },
+
+
+    ]
+  },
+  // tenis  
+  {
+    id: 90,
+    name: "Tênis Adidas 1",
+    price: 120.00,
+    category: "Tenis Esportivo",
+    slug: "tenis-esportivo",
+    images: [
+      "/imagens/produtos/tenis-adidas-1.jpeg"
+    ],
+    sizes: ["39", "40", "41","42"],
+    colors: [
+      { name: "Branco", hex: "#ffffff" },
+    ]
+  },
+  {
+    id: 92,
+    name: "Tênis Adidas 2",
+    price: 120.00,
+    category: "Tenis Esportivo",
+    slug: "tenis-esportivo",
+    images: [
+      "/imagens/produtos/tenis-adidas-2.jpeg"
+    ],
+    sizes: ["39", "40", "41","42"],
+    colors: [
+      { name: "Cinza", hex: "#494849" },
+    ]
+  },
+  {
+    id: 93,
+    name: "Tênis Adidas 3",
+    price: 120.00,
+    category: "Tenis Esportivo",
+    slug: "tenis-esportivo",
+    images: [
+      "/imagens/produtos/tenis-adidas-3.jpeg"
+    ],
+    sizes: ["39", "40", "41","42"],
+    colors: [
+      { name: "Preto", hex: "#000000" },
+    ]
+  },
+  {
+    id: 94,
+    name: "Tênis Nike ",
+    price: 120.00,
+    category: "Tenis Esportivo",
+    slug: "tenis-esportivo",
+    images: [
+      "/imagens/produtos/tenis-nike-1.jpeg"
+    ],
+    sizes: ["39", "40", "41","42"],
+    colors: [
+      { name: "Preto", hex: "#000000" },
+    ] 
+  },
+
 ];
 
 // 👉 COLEÇÕES/CATEGORIAS
@@ -419,13 +548,13 @@ export const CATEGORIES = [
     subtitle: "Tecnologia que mantém você seco no treino",
     imgColor: "bg-gradient-to-br from-sky-500 to-blue-800",
   },
-  // {
-  //   id: "tenis",
-  //   slug: "tenis-esportivo",
-  //   title: "Tênis Esportivo",
-  //   subtitle: "Velocidade, conforto e estilo a cada passo",
-  //   imgColor: "bg-gradient-to-br from-orange-500 to-orange-900",
-  // },
+   {
+     id: "tenis",
+     slug: "tenis-esportivo",
+     title: "Tênis Esportivo",
+     subtitle: "Velocidade, conforto e estilo a cada passo",
+     imgColor: "bg-gradient-to-br from-orange-500 to-orange-900",
+   },
   // {
   //   id: "oculos",
   //   slug: "oculos",
