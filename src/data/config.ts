@@ -135,28 +135,27 @@ export const PRODUCTS = [
     ]
     
   },
-   {
-    id: 40,
-    name: "Short Poliamida",
-    price: 45.00,
-    category: "short-dry-fit",
-    slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/Short poliamida .jpeg"
-    ],
-    sizes: ["M", "G", "GG"],
-    colors: [
-      { name: "Rosa Pink", hex: "#e879f9" },
-      { name: "Rosa claro", hex: "#f9a8d4" },
-      { name: "Preto", hex: "#000000" },
-      { name: "Branco", hex: "#ffffff" },
-      { name: "Verde escuro", hex: "#14532d" },
-      { name: "Verde claro", hex: "#22c55e" },
-      { name: "Azul royal", hex: "#1e3a8a" },
-      { name: "Azul claro", hex: "#3b82f6" }
-    ]
-  },
-
+    // {
+     // id: 25,
+     // name: "Short Poliamida",
+     // price: 45.00,
+     // category: "short-dry-fit",
+     // slug: "short-dry-fit",
+     // images: [
+     //   "/imagens/produtos/Short poliamida .jpeg"
+     // ],
+      //sizes: ["M", "G", "GG"],
+      //colors: [
+       // { name: "Rosa Pink", hex: "#e879f9" },
+      //  { name: "Rosa claro", hex: "#f9a8d4" },
+       // { name: "Preto", hex: "#000000" },
+       // { name: "Branco", hex: "#ffffff" },
+       // { name: "Verde escuro", hex: "#14532d" },
+       // { name: "Verde claro", hex: "#22c55e" },
+      //  { name: "Azul royal", hex: "#1e3a8a" },
+      //  { name: "Azul claro", hex: "#3b82f6" }
+     // ]
+   //
   // BLUSA POLIAMIDA
   {
     id: 38,
