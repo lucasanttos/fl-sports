@@ -3,7 +3,7 @@
 Bem-vindo ao repositório oficial da **FL Sports**, um e-commerce de alta conversão focado em vestuário e equipamentos esportivos de alta performance e streetwear de vanguarda. 
 
 Este projeto foi desenhado com foco em **Performance, SEO e Experiência do Usuário (UX)**, culminando em um fluxo de checkout direto via WhatsApp para maximizar o relacionamento com o cliente.
-
+https://www.flsports.store/ 
 ---
 
 ## 🚀 Tecnologias Utilizadas
