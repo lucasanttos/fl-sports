@@ -29,21 +29,12 @@ export default function QuickAddModal() {
 
   if (!quickAddProduct) return null;
 
-  // 👉 Pega as imagens do produto (suporta o novo formato "images")
-  const productImages = quickAddProduct.images && quickAddProduct.images.length > 0
-    ? quickAddProduct.images
-    : [];
-
+  const productImages = quickAddProduct.images?.length > 0 ? quickAddProduct.images : [];
   const hasImages = productImages.length > 0;
   const hasMultipleImages = productImages.length > 1;
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
-  };
+  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+  const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
 
   const canAdd = selectedSize && selectedColor;
 
@@ -57,13 +48,13 @@ export default function QuickAddModal() {
     <AnimatePresence>
       <div className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center sm:p-4">
 
-        {/* Backdrop do Modal Principal */}
+        {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setQuickAddProduct(null)}
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/75 backdrop-blur-sm"
         />
 
         {/* Modal Principal */}
@@ -74,86 +65,110 @@ export default function QuickAddModal() {
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           className="
             relative w-full bg-white shadow-2xl overflow-hidden
-            rounded-t-2xl sm:rounded-sm
-            max-h-[92dvh] sm:max-h-[85vh]
+            rounded-t-3xl sm:rounded-xl
+            max-h-[92dvh] sm:max-h-[82vh]
             flex flex-col sm:flex-row
-            sm:max-w-lg
+            sm:max-w-[560px]
           "
         >
+          {/* ── Coluna Esquerda: Imagem ── */}
+          <div className="relative bg-zinc-50 flex-shrink-0 sm:w-[48%] group flex flex-col">
 
-          {/* Imagem do Produto */}
-          <div className="
-            relative bg-zinc-100 flex-shrink-0 flex flex-col items-center justify-center
-            sm:w-2/5 sm:h-auto
-            group
-          ">
             {/* Botão fechar — mobile */}
             <button
               onClick={() => setQuickAddProduct(null)}
-              className="absolute top-3 right-3 z-10 p-1.5 bg-white rounded-full shadow-md sm:hidden"
+              className="absolute top-3 right-3 z-20 p-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md sm:hidden"
               aria-label="Fechar"
             >
-              <X size={18} />
+              <X size={16} className="text-zinc-700" />
             </button>
 
             {hasImages ? (
-              <div className="relative w-full">
+              <div className="flex flex-col h-full">
 
-                {/* Imagem atual */}
+                {/* Imagem Principal */}
                 <div
-                  className="relative w-full cursor-zoom-in"
+                  className="relative flex-1 cursor-zoom-in overflow-hidden"
                   onClick={() => setIsImageExpanded(true)}
+                  style={{ minHeight: 0 }}
                 >
                   <img
                     src={productImages[currentImageIndex]}
                     alt={`${quickAddProduct.name} - foto ${currentImageIndex + 1}`}
-                    className="
-                      w-full object-contain
-                      max-h-[30vh] sm:max-h-none sm:h-full
-                    "
+                    className="w-full h-full object-cover"
+                    style={{ maxHeight: '38vh', minHeight: '200px' }}
                   />
-                  {/* Ícone de zoom */}
+
+                  {/* Overlay de Zoom */}
                   <div className="
-                    absolute inset-0 flex items-center justify-center bg-black/20 opacity-0
-                    group-hover:opacity-100 transition-opacity duration-200
-                    pointer-events-none
+                    absolute inset-0 flex items-center justify-center
+                    bg-black/0 group-hover:bg-black/10
+                    opacity-0 group-hover:opacity-100
+                    transition-all duration-200 pointer-events-none
                   ">
-                    <ZoomIn size={32} className="text-white" />
+                    <div className="bg-black/50 backdrop-blur-sm rounded-full p-2.5">
+                      <ZoomIn size={20} className="text-white" />
+                    </div>
                   </div>
+
+                  {/* Navegação */}
+                  {hasMultipleImages && (
+                    <>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                        className="
+                          absolute left-2 top-1/2 -translate-y-1/2 z-10
+                          bg-white/90 hover:bg-white text-zinc-800
+                          p-1.5 rounded-full shadow-lg
+                          transition-all duration-150
+                          opacity-0 group-hover:opacity-100
+                        "
+                        aria-label="Imagem anterior"
+                      >
+                        <ChevronLeft size={16} />
+                      </button>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                        className="
+                          absolute right-2 top-1/2 -translate-y-1/2 z-10
+                          bg-white/90 hover:bg-white text-zinc-800
+                          p-1.5 rounded-full shadow-lg
+                          transition-all duration-150
+                          opacity-0 group-hover:opacity-100
+                        "
+                        aria-label="Próxima imagem"
+                      >
+                        <ChevronRight size={16} />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Contador de imagens */}
+                  {hasMultipleImages && (
+                    <div className="
+                      absolute bottom-2 right-2
+                      bg-black/50 backdrop-blur-sm
+                      text-white text-[10px] font-semibold
+                      px-2 py-0.5 rounded-full
+                    ">
+                      {currentImageIndex + 1}/{productImages.length}
+                    </div>
+                  )}
                 </div>
 
-                {/* Botões de navegação — só aparece se tiver mais de 1 imagem */}
+                {/* Miniaturas */}
                 {hasMultipleImages && (
-                  <>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black p-1.5 rounded-full shadow-md transition-all z-10"
-                      aria-label="Imagem anterior"
-                    >
-                      <ChevronLeft size={18} />
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black p-1.5 rounded-full shadow-md transition-all z-10"
-                      aria-label="Próxima imagem"
-                    >
-                      <ChevronRight size={18} />
-                    </button>
-                  </>
-                )}
-
-                {/* Miniaturas — só aparece se tiver mais de 1 imagem */}
-                {hasMultipleImages && (
-                  <div className="flex gap-1.5 justify-center p-2 bg-white border-t border-zinc-100">
+                  <div className="flex gap-1.5 p-2.5 bg-white border-t border-zinc-100 overflow-x-auto">
                     {productImages.map((img, index) => (
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
                         className={`
-                          w-10 h-10 rounded overflow-hidden border-2 flex-shrink-0 transition-all
+                          relative flex-shrink-0 w-11 h-11 rounded-lg overflow-hidden
+                          ring-offset-1 transition-all duration-150
                           ${currentImageIndex === index
-                            ? 'border-black'
-                            : 'border-transparent opacity-60 hover:opacity-100'
+                            ? 'ring-2 ring-black'
+                            : 'ring-1 ring-zinc-200 opacity-55 hover:opacity-100 hover:ring-zinc-400'
                           }
                         `}
                         aria-label={`Ver foto ${index + 1}`}
@@ -168,48 +183,28 @@ export default function QuickAddModal() {
                   </div>
                 )}
 
-                {/* Indicador de posição (pontos) */}
-                {hasMultipleImages && (
-                  <div className="flex justify-center gap-1.5 py-1.5">
-                    {productImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`
-                          rounded-full transition-all
-                          ${currentImageIndex === index
-                            ? 'w-4 h-1.5 bg-black'
-                            : 'w-1.5 h-1.5 bg-zinc-300'
-                          }
-                        `}
-                        aria-label={`Ir para foto ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                )}
-
               </div>
             ) : (
-              <div className="w-full flex items-center justify-center py-10">
-                <ShoppingBag className="w-16 h-16 text-zinc-300" />
+              <div className="w-full flex items-center justify-center py-16">
+                <ShoppingBag className="w-16 h-16 text-zinc-200" />
               </div>
             )}
           </div>
 
-          {/* Conteúdo do Modal (Opções de Cor/Tamanho/Preço) */}
+          {/* ── Coluna Direita: Info + Opções ── */}
           <div className="flex-1 flex flex-col overflow-y-auto min-h-0">
-            <div className="p-5 sm:p-8 flex flex-col flex-1">
+            <div className="p-5 sm:p-6 flex flex-col flex-1">
 
               {/* Header */}
               <div className="flex justify-between items-start mb-5">
-                <div>
-                  <p className="hidden sm:block text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">
+                <div className="flex-1 pr-3">
+                  <p className="hidden sm:block text-[10px] font-bold text-zinc-400 uppercase tracking-[0.15em] mb-1.5">
                     {quickAddProduct.category}
                   </p>
-                  <h3 className="text-lg sm:text-xl font-bold tracking-tight leading-tight text-zinc-900">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight leading-snug text-zinc-900">
                     {quickAddProduct.name}
                   </h3>
-                  <p className="text-base sm:text-lg font-semibold text-black mt-1.5">
+                  <p className="text-lg sm:text-xl font-bold text-black mt-2">
                     {formatPrice(quickAddProduct.price)}
                   </p>
                 </div>
@@ -217,22 +212,27 @@ export default function QuickAddModal() {
                 {/* Botão fechar — desktop */}
                 <button
                   onClick={() => setQuickAddProduct(null)}
-                  className="hidden sm:flex p-2 hover:bg-zinc-100 rounded-full transition-colors"
+                  className="hidden sm:flex items-center justify-center w-8 h-8 hover:bg-zinc-100 rounded-full transition-colors flex-shrink-0"
                   aria-label="Fechar"
                 >
-                  <X size={22} className="text-black" />
+                  <X size={18} className="text-zinc-600" />
                 </button>
               </div>
+
+              {/* Separador */}
+              <div className="h-px bg-zinc-100 mb-5" />
 
               {/* Cores */}
               {quickAddProduct.colors.length > 0 && (
                 <div className="mb-5">
-                  <p className="text-xs font-bold text-black uppercase tracking-widest mb-2.5 flex items-center justify-between">
-                    Cor
-                    <span className="text-zinc-400 font-medium normal-case text-xs">
-                      {selectedColor || 'Selecione uma cor'}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-bold text-zinc-900 uppercase tracking-[0.12em]">
+                      Cor
                     </span>
-                  </p>
+                    <span className="text-xs text-zinc-400">
+                      {selectedColor || 'Selecione'}
+                    </span>
+                  </div>
                   <div className="flex flex-wrap gap-2.5">
                     {quickAddProduct.colors.map(color => (
                       <button
@@ -241,10 +241,10 @@ export default function QuickAddModal() {
                         title={color.name}
                         aria-label={`Cor ${color.name}`}
                         className={`
-                          w-8 h-8 rounded-full border-2 transition-all
+                          relative w-7 h-7 rounded-full transition-all duration-150
                           ${selectedColor === color.name
-                            ? 'border-black scale-110 shadow-md'
-                            : 'border-zinc-200 hover:border-zinc-500'
+                            ? 'ring-2 ring-black ring-offset-2 scale-110'
+                            : 'ring-1 ring-zinc-200 hover:ring-zinc-400 hover:scale-105'
                           }
                         `}
                         style={{ backgroundColor: color.hex }}
@@ -255,24 +255,26 @@ export default function QuickAddModal() {
               )}
 
               {/* Tamanhos */}
-              <div className="mb-5">
-                <p className="text-xs font-bold text-black uppercase tracking-widest mb-2.5 flex items-center justify-between">
-                  Tamanho
-                  <span className="text-zinc-400 font-medium normal-case text-xs">
-                    {selectedSize || 'Selecione um tamanho'}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold text-zinc-900 uppercase tracking-[0.12em]">
+                    Tamanho
                   </span>
-                </p>
-                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs text-zinc-400">
+                    {selectedSize || 'Selecione'}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
                   {quickAddProduct.sizes.map(size => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
                       className={`
-                        px-3.5 py-2 text-xs font-bold uppercase tracking-wide
-                        transition-all rounded-sm border
+                        min-w-[42px] px-3 py-2 text-[11px] font-bold uppercase tracking-wide
+                        rounded-lg border transition-all duration-150
                         ${selectedSize === size
-                          ? 'bg-black text-white border-black'
-                          : 'bg-white text-black border-zinc-200 hover:border-black'
+                          ? 'bg-black text-white border-black shadow-sm'
+                          : 'bg-white text-zinc-700 border-zinc-200 hover:border-zinc-800 hover:text-black'
                         }
                       `}
                     >
@@ -283,20 +285,26 @@ export default function QuickAddModal() {
               </div>
 
               {/* Botão Adicionar */}
-              <div className="mt-auto pt-2">
+              <div className="mt-auto">
                 <button
                   onClick={handleAdd}
                   disabled={!canAdd}
                   className={`
-                    w-full py-3.5 font-bold uppercase tracking-widest text-sm
-                    transition-all duration-200 rounded-sm
+                    w-full py-3.5 rounded-xl font-bold uppercase tracking-[0.1em] text-sm
+                    transition-all duration-200
                     ${canAdd
-                      ? 'bg-black text-white hover:bg-zinc-800 active:scale-[0.98]'
+                      ? 'bg-black text-white hover:bg-zinc-800 active:scale-[0.98] shadow-sm'
                       : 'bg-zinc-100 text-zinc-400 cursor-not-allowed'
                     }
                   `}
                 >
-                  {canAdd ? 'Adicionar ao Carrinho' : 'Selecione cor e tamanho'}
+                  {canAdd
+                    ? <span className="flex items-center justify-center gap-2">
+                        <ShoppingBag size={16} />
+                        Adicionar ao Carrinho
+                      </span>
+                    : 'Selecione cor e tamanho'
+                  }
                 </button>
               </div>
 
@@ -305,67 +313,110 @@ export default function QuickAddModal() {
 
         </motion.div>
 
-        {/* Modal de Imagem Expandida */}
+        {/* ── Modal de Imagem Expandida ── */}
         <AnimatePresence>
           {isImageExpanded && hasImages && (
-            <div className="fixed inset-0 z-[90] flex items-center justify-center p-4">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsImageExpanded(false)}
-                className="absolute inset-0 bg-black/90"
-              />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[90] flex items-center justify-center"
+              onClick={() => setIsImageExpanded(false)}
+            >
+              {/* Backdrop */}
+              <div className="absolute inset-0 bg-black/92 backdrop-blur-md" />
 
+              {/* Container da imagem   */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.88 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+                exit={{ opacity: 0, scale: 0.88 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="relative z-10 flex items-center justify-center"
+                style={{
+                  width: 'min(90vw, 560px)',
+                  height: 'min(85vh, 640px)',
+                }}
+                onClick={(e) => e.stopPropagation()}
               >
                 <img
                   src={productImages[currentImageIndex]}
                   alt={quickAddProduct.name}
-                  className="max-w-full max-h-full object-contain"
+                  className="w-full h-full object-contain rounded-lg"
+                  style={{ maxWidth: '100%', maxHeight: '100%' }}
                 />
 
-                {/* Navegação no modal expandido */}
+                {/* Fechar */}
+                <button
+                  onClick={() => setIsImageExpanded(false)}
+                  className="
+                    absolute -top-3 -right-3
+                    bg-white text-zinc-900
+                    w-8 h-8 rounded-full shadow-xl
+                    flex items-center justify-center
+                    hover:bg-zinc-100 transition-colors
+                  "
+                  aria-label="Fechar"
+                >
+                  <X size={16} />
+                </button>
+
+                {/* Navegação */}
                 {hasMultipleImages && (
                   <>
                     <button
                       onClick={(e) => { e.stopPropagation(); prevImage(); }}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black p-2 rounded-full shadow-lg transition-all"
+                      className="
+                        absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2
+                        bg-white text-zinc-900 hover:bg-zinc-100
+                        w-9 h-9 rounded-full shadow-xl
+                        flex items-center justify-center
+                        transition-all duration-150
+                      "
                       aria-label="Imagem anterior"
                     >
-                      <ChevronLeft size={22} />
+                      <ChevronLeft size={18} />
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); nextImage(); }}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/90 hover:bg-black p-2 rounded-full shadow-lg transition-all"
+                      className="
+                        absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2
+                        bg-white text-zinc-900 hover:bg-zinc-100
+                        w-9 h-9 rounded-full shadow-xl
+                        flex items-center justify-center
+                        transition-all duration-150
+                      "
                       aria-label="Próxima imagem"
                     >
-                      <ChevronRight size={22} />
+                      <ChevronRight size={18} />
                     </button>
                   </>
                 )}
 
-                {/* Contador no modal expandido */}
+                {/* Contador */}
                 {hasMultipleImages && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                    {currentImageIndex + 1} / {productImages.length}
+                  <div className="
+                    absolute -bottom-10 left-1/2 -translate-x-1/2
+                    flex items-center gap-2
+                  ">
+                    {productImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(index); }}
+                        className={`
+                          rounded-full transition-all duration-200
+                          ${currentImageIndex === index
+                            ? 'w-5 h-1.5 bg-white'
+                            : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'
+                          }
+                        `}
+                      />
+                    ))}
                   </div>
                 )}
 
-                <button
-                  onClick={() => setIsImageExpanded(false)}
-                  className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full shadow-lg"
-                  aria-label="Fechar visualização da imagem"
-                >
-                  <X size={24} />
-                </button>
               </motion.div>
-            </div>
+            </motion.div>
           )}
         </AnimatePresence>
 

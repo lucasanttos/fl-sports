@@ -120,7 +120,7 @@ export const PRODUCTS = [
   {
     id: 37,
     name: "Short Nike Poliamida",
-    price: 45.00,
+    price: 35.00,
     category: "short-dry-fit",
     slug: "short-dry-fit",
     images: [
@@ -135,27 +135,7 @@ export const PRODUCTS = [
     ]
     
   },
-    // {
-     // id: 25,
-     // name: "Short Poliamida",
-     // price: 45.00,
-     // category: "short-dry-fit",
-     // slug: "short-dry-fit",
-     // images: [
-     //   "/imagens/produtos/Short poliamida .jpeg"
-     // ],
-      //sizes: ["M", "G", "GG"],
-      //colors: [
-       // { name: "Rosa Pink", hex: "#e879f9" },
-      //  { name: "Rosa claro", hex: "#f9a8d4" },
-       // { name: "Preto", hex: "#000000" },
-       // { name: "Branco", hex: "#ffffff" },
-       // { name: "Verde escuro", hex: "#14532d" },
-       // { name: "Verde claro", hex: "#22c55e" },
-      //  { name: "Azul royal", hex: "#1e3a8a" },
-      //  { name: "Azul claro", hex: "#3b82f6" }
-     // ]
-   //
+   
   // BLUSA POLIAMIDA
   {
     id: 38,
@@ -501,6 +481,24 @@ export const PRODUCTS = [
     ] 
   },
 
+// CASAQUINHOS
+{
+    id: 110,
+    name: "Casaquinho",
+    price: 999.00,
+    category: "Casaquinhos Femininos",
+    slug: "casaquinho",
+    images: [
+      "/imagens/produtos/casaquinho.jpeg"
+    ],
+    sizes: ["M", "G"],
+    colors: [
+      { name: "Preto", hex: "#000000" }, 
+      { name: "Branco", hex: "#ffffff" },
+
+    ] 
+  },
+  
 ];
 
 // 👉 COLEÇÕES/CATEGORIAS
@@ -615,7 +613,7 @@ export const CATEGORIES = [
     slug: "regata-machao-over-suedine",
     title: "Regata Machão Over Suedine",
     subtitle: "Oversized, confortável e cheio de personalidade",
-    imgColor: "bg-gradient-to-br from-amber-500 to-orange-800",
+    imgColor: "bg-gradient-to-br from-amber-300 to-orange-800",
   },
   {
     id: "camisa-plus",
@@ -623,5 +621,12 @@ export const CATEGORIES = [
     title: "Camisa Plus Size",
     subtitle: "Moda inclusiva com estilo para todos os corpos",
     imgColor: "bg-gradient-to-br from-cyan-500 to-cyan-900",
+  },
+  {
+    id: "casaquinho",
+    slug: "casaquinho",
+    title: "Casaquinhos Femininos",
+    subtitle: "O toque quentinho que o seu look precisava",
+    imgColor: "bg-gradient-to-br from-cyan-900 to-black-900",
   },
 ];
