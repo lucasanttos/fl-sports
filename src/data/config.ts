@@ -140,7 +140,7 @@ export const PRODUCTS = [
   {
     id: 38,
     name: "Blusa Poliamida",
-    price: 45.00,
+    price: 35.00,
     category: "conjunto-feminino-poliamida",
     slug: "blusa-feminina",
     images: [
