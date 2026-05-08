@@ -485,7 +485,7 @@ export const PRODUCTS = [
 {
     id: 110,
     name: "Casaquinho",
-    price: 999.00,
+    price: 40.00,
     category: "Casaquinhos Femininos",
     slug: "casaquinho",
     images: [
