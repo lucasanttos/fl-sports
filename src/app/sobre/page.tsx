@@ -17,8 +17,6 @@ export default function SobrePage() {
           <ScrollReveal direction="up" delay={0.2}>
             <div className="aspect-square bg-zinc-100 rounded-sm relative overflow-hidden">
               
-              {/* 👉 ADICIONE A FOTO AQUI! */}
-              {/* Altere o '/imagens/loja.jpg' para o nome exato da foto que você colocou na pasta public */}
               <img 
                 src="/imagens/sobremim.jpg" 
                 alt="Nossa loja física" 

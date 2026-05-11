@@ -3,13 +3,12 @@ export const CLIENT_INFO = {
   name: "FL_SPORTS",
   whatsapp: "5584992148040",
   instagram: "fl_sports",
-  location: "São Paulo do Potengi, RN",
-  //  Link limpo e direto para o WhatsApp
+  location: "R. Potengi, 82 - Sao Paulo Do Potengi, São Paulo do Potengi - RN, 59460-000",
   whatsappLink: "https://wa.me/5584992148040?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20FL_SPORTS"
 };
 
 // 👉 AQUI EU CONFIGURO A TAXA DA MAQUININHA DE CARTÃO
-export const CARD_FEE_PERCENTAGE = 10 ; // Ex: 5 significa 5% de acréscimo.
+export const CARD_FEE_PERCENTAGE = 10 ; 
 
 // 👉 Lógica de formatação de preço para R$
 export const formatPrice = (value: number) => {
@@ -29,43 +28,43 @@ const standardColors = [
 
 // 👉 CATÁLOGO DE PRODUTOS
 export const PRODUCTS = [
-  // Combos 
-  //  { 
-  //    id: 31, 
-  //    name: "Kit 2 Camisas Dri-Fit Pro", 
-  //    price: 70.00, 
-  //    category: "Combos", 
-  //    slug: "combos", 
-  //    images: ["/imagens/produtos/combo1.jpeg"], 
-  //    sizes: clothingSizes, 
-  //    colors: [{ name: "Preto + Branco", hex: "#18181b" }] 
+  // Combos
+  //  {
+  //    id: 31,
+  //    name: "Kit 2 Camisas Dri-Fit Pro",
+  //    price: 70.00,
+  //    category: "Combos",
+  //    slug: "combos",
+  //    images: ["/imagens/produtos/combo1.jpeg"],
+  //    sizes: clothingSizes,
+  //    colors: [{ name: "Preto + Branco", hex: "#18181b" }]
   //  },
-  //  { 
-  //    id: 32, 
-  //    name: "Combo Treino (Short + Top)", 
-  //    price: 70.00, 
-  //    category: "Combos", 
-  //    slug: "combos", 
-  //    images: ["/imagens/produtos/combo1.jpeg"], 
-  //    sizes: clothingSizes, 
-  //    colors: standardColors 
+  //  {
+  //    id: 32,
+  //    name: "Combo Treino (Short + Top)",
+  //    price: 70.00,
+  //    category: "Combos",
+  //    slug: "combos",
+  //    images: ["/imagens/produtos/combo1.jpeg"],
+  //    sizes: clothingSizes,
+  //    colors: standardColors
   //  },
-  //  { 
-  //    id: 34, 
-  //    name: "Combo Treino camisa + short homem", 
-  //    price: 70.00, 
-  //    category: "Combos", 
-  //    slug: "combos", 
-  //    images: ["/imagens/produtos/combo1.jpeg"], 
-  //    sizes: clothingSizes, 
-  //    colors: standardColors 
+  //  {
+  //    id: 34,
+  //    name: "Combo Treino camisa + short homem",
+  //    price: 70.00,
+  //    category: "Combos",
+  //    slug: "combos",
+  //    images: ["/imagens/produtos/combo1.jpeg"],
+  //    sizes: clothingSizes,
+  //    colors: standardColors
   //  },
 
-  // Camisas de Time 
+  // Camisas de Time
   {
     id: 10,
     name: "Camisa Seleção Brasileira",
-    price: 50.00,
+    price: 50.0,
     category: "Camisas de Time",
     slug: "camisas-de-time",
     images: [
@@ -73,79 +72,70 @@ export const PRODUCTS = [
       "/imagens/produtos/camisa-time-brasil-2.jpeg",
     ],
     sizes: clothingSizes,
-    colors: [{ name: "Amarelo", hex: "#facc15" }]
+    colors: [{ name: "Amarelo", hex: "#facc15" }],
   },
 
   // SHORT TACTEL COM ELASTANO
   {
     id: 35,
     name: "Short Tactel com Elastano",
-    price: 35.00,
+    price: 35.0,
     category: "short-tactel",
     slug: "short-tactel",
-    images: [
-      "/imagens/produtos/Short tactel com elastano .jpeg"
-    ],
+    images: ["/imagens/produtos/Short tactel com elastano .jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#18181b" },
       { name: "Verde claro", hex: "#22c55e" },
       { name: "Azul claro", hex: "#3b82f6" },
       { name: "Vermelho", hex: "#ef4444" },
-      { name: "Cinza", hex: "#71717a" }
-    ]
+      { name: "Cinza", hex: "#71717a" },
+    ],
   },
 
   // SHORT DUPLO FEMININO
   {
     id: 36,
     name: "Short Duplo Feminino",
-    price: 45.00,
+    price: 45.0,
     category: "short-duplo-fem",
     slug: "short-duplo-fem",
-    images: [
-      "/imagens/produtos/Short duplo.jpeg"
-    ],
+    images: ["/imagens/produtos/Short duplo.jpeg"],
     sizes: ["P", "M", "G", "GG"],
     colors: [
       { name: "Branco", hex: "#ffffff" },
       { name: "Cinza", hex: "#71717a" },
       { name: "Preto", hex: "#18181b" },
       { name: "Azul marinho", hex: "#1e40af" },
-      { name: "Azul claro", hex: "#3b82f6" }
-    ]
+      { name: "Azul claro", hex: "#3b82f6" },
+    ],
   },
 
   // SHORT  POLIAMIDA
   {
     id: 37,
     name: "Short Nike Poliamida",
-    price: 35.00,
+    price: 35.0,
     category: "short-dry-fit",
     slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/SHORT NIKE POLIAMIDA.jpeg"
-    ],
+    images: ["/imagens/produtos/SHORT NIKE POLIAMIDA.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
       { name: "Rosa", hex: "#f472b6" },
       { name: "Azul claro", hex: "#3b82f6" },
-      { name: "Branco", hex: "#ffffff" }
-    ]
-    
+      { name: "Branco", hex: "#ffffff" },
+    ],
   },
-   
+
   // BLUSA POLIAMIDA
   {
     id: 38,
     name: "Blusa Poliamida",
-    price: 35.00,
-    category: "conjunto-feminino-poliamida",
+    price: 35.0,
+    category: "Blusas em Poliamida",
     slug: "blusa-feminina",
-    images: [
-      "/imagens/produtos/BLUSA POLIAMIDA .jpeg"
-    ],
+    images: ["/imagens/produtos/BLUSA POLIAMIDA .jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#18181b" },
@@ -156,20 +146,78 @@ export const PRODUCTS = [
       { name: "Vinho", hex: "#991b1b" },
       { name: "Verde claro", hex: "#22c55e" },
       { name: "Verde militar", hex: "#4d7c0f" },
-      { name: "Rosa", hex: "#f472b6" }
-    ]
+      { name: "Rosa", hex: "#f472b6" },
+    ],
+  },
+  {
+    id: 34,
+    name: "Blusa Poliamida Adidas",
+    price: 35.0,
+    category: "Blusas em Poliamida",
+    slug: "blusa-feminina",
+    images: ["/imagens/produtos/BLUSA POLIAMIDA .jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#18181b" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Azul", hex: "#3b82f6" },
+      { name: "Cinza", hex: "#71717a" },
+      { name: "Vermelho", hex: "#ef4444" },
+      { name: "Vinho", hex: "#991b1b" },
+      { name: "Verde claro", hex: "#22c55e" },
+      { name: "Verde militar", hex: "#4d7c0f" },
+      { name: "Rosa", hex: "#f472b6" },
+    ],
+  },
+  {
+    id: 35,
+    name: "Blusa Poliamida Nike",
+    price: 35.0,
+    category: "Blusas em Poliamida",
+    slug: "blusa-feminina",
+    images: ["/imagens/produtos/BLUSA POLIAMIDA .jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#18181b" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Azul", hex: "#3b82f6" },
+      { name: "Cinza", hex: "#71717a" },
+      { name: "Vermelho", hex: "#ef4444" },
+      { name: "Vinho", hex: "#991b1b" },
+      { name: "Verde claro", hex: "#22c55e" },
+      { name: "Verde militar", hex: "#4d7c0f" },
+      { name: "Rosa", hex: "#f472b6" },
+    ],
+  },
+  {
+    id: 36,
+    name: "Blusa Poliamida Alo",
+    price: 35.0,
+    category: "Blusas em Poliamida",
+    slug: "blusa-feminina",
+    images: ["/imagens/produtos/BLUSA POLIAMIDA .jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#18181b" },
+      { name: "Branco", hex: "#ffffff" },
+      { name: "Azul", hex: "#3b82f6" },
+      { name: "Cinza", hex: "#71717a" },
+      { name: "Vermelho", hex: "#ef4444" },
+      { name: "Vinho", hex: "#991b1b" },
+      { name: "Verde claro", hex: "#22c55e" },
+      { name: "Verde militar", hex: "#4d7c0f" },
+      { name: "Rosa", hex: "#f472b6" },
+    ],
   },
 
   // CAMISA dry fit
   {
     id: 39,
     name: "Camisa Adidas Três Listras",
-    price: 35.00,
+    price: 35.0,
     category: "camisa-dry-fit",
     slug: "camisa-dry-fit",
-    images: [
-      "/imagens/produtos/camisa-adidas-3listras.jpeg"
-    ],
+    images: ["/imagens/produtos/camisa-adidas-3listras.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
@@ -179,12 +227,12 @@ export const PRODUCTS = [
       { name: "Rosa", hex: "#f187ec" },
       { name: "lilás", hex: "#C8A2C8" },
       { name: "Azul claro", hex: "#4fd0f7" },
-    ]
+    ],
   },
   {
     id: 40,
     name: "Camisa Nike Básica",
-    price: 35.00,
+    price: 35.0,
     category: "camisa-dry-fit",
     slug: "camisa-dry-fit",
     images: ["/imagens/produtos/camisa-dfit-nike-basico.jpeg"],
@@ -195,19 +243,17 @@ export const PRODUCTS = [
       { name: "Azul Marinho", hex: "#22336d" },
       { name: "Bege", hex: "#F5F5DC" },
       { name: "Vinho", hex: "#612326" },
-    ]
+    ],
   },
 
   // CAMISA TEXTURIZADA
   {
     id: 50,
     name: "Camisa Texturizada Diesel",
-    price: 70.00,
+    price: 70.0,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
-    images: [
-      "/imagens/produtos/camisa-texturizada-diesel.jpeg"
-    ],
+    images: ["/imagens/produtos/camisa-texturizada-diesel.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
@@ -216,18 +262,16 @@ export const PRODUCTS = [
       { name: "Off-White", hex: "#F3F4F6" },
       { name: "Bege Areia", hex: "#D6D3D1" },
       { name: "Marrom Café", hex: "#78350F" },
-      { name: "Vermelho", hex: "#DC2626" }
-    ]
+      { name: "Vermelho", hex: "#DC2626" },
+    ],
   },
   {
     id: 51,
     name: "Camisa Texturizada Hugo Boss",
-    price: 70.00,
+    price: 70.0,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
-    images: [
-      "/imagens/produtos/camisa-texturizada-boss.jpeg"
-    ],
+    images: ["/imagens/produtos/camisa-texturizada-boss.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
@@ -236,18 +280,16 @@ export const PRODUCTS = [
       { name: "Off-White", hex: "#F3F4F6" },
       { name: "Bege Areia", hex: "#D6D3D1" },
       { name: "Marrom Café", hex: "#78350F" },
-      { name: "Vermelho", hex: "#DC2626" }
-    ]
+      { name: "Vermelho", hex: "#DC2626" },
+    ],
   },
   {
     id: 52,
     name: "Camisa Texturizada Ralph Lauren",
-    price: 70.00,
+    price: 70.0,
     category: "Camisa Texturizada",
     slug: "camisa-texturizada",
-    images: [
-      "/imagens/produtos/camisa-texturizada-lauren.jpeg"
-    ],
+    images: ["/imagens/produtos/camisa-texturizada-lauren.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
@@ -256,107 +298,131 @@ export const PRODUCTS = [
       { name: "Off-White", hex: "#F3F4F6" },
       { name: "Bege Areia", hex: "#D6D3D1" },
       { name: "Marrom Café", hex: "#78350F" },
-      { name: "Vermelho", hex: "#DC2626" }
-    ]
+      { name: "Vermelho", hex: "#DC2626" },
+    ],
   },
 
-
-  // CAMISA PLUS 
+  // CAMISA PLUS
   {
     id: 41,
     name: "Camisa Plus",
-    price: 70.00,
+    price: 70.0,
     category: "Camisa Plus",
     slug: "camisa-plus",
-    images: [
-      "/imagens/produtos/CAMISAS PLUS.jpeg"
-    ],
+    images: ["/imagens/produtos/CAMISAS PLUS.jpeg"],
     sizes: ["G1", "G2", "G3"],
     colors: [
       { name: "Preto", hex: "#18181b" },
       { name: "Azul royal", hex: "#1e3a8a" },
       { name: "Cinza", hex: "#71717a" },
-      { name: "Branco", hex: "#ffffff" }
-    ]
+      { name: "Branco", hex: "#ffffff" },
+    ],
   },
 
   // BONÉ PREMIUM
   {
-    id: 42,
+    id: 120,
     name: "Boné Premium",
-    price: 70.00,
+    price: 70.0,
+    category: "acessorios",
+    slug: "bone",
+    images: ["/imagens/produtos/bone.jpeg"],
+    sizes: oneSize,
+    colors: standardColors,
+  },
+  {
+    id: 121,
+    name: "Boné Premium H",
+    price: 70.0,
     category: "acessorios",
     slug: "bone",
     images: [
-      "/imagens/produtos/bone.jpeg"
+      "/imagens/produtos/bone-h-1.jpeg",
+      "/imagens/produtos/bone-h-2.jpeg",
     ],
     sizes: oneSize,
-    colors: standardColors
+    colors: standardColors,
+  },
+  {
+    id: 122,
+    name: "Boné Premium B",
+    price: 70.0,
+    category: "acessorios",
+    slug: "bone",
+    images: [
+      "/imagens/produtos/bone-B1.jpeg",
+      "/imagens/produtos/BONE-B2.jpeg",
+      "/imagens/produtos/bone-B3.jpeg",
+      "/imagens/produtos/bone-B4.jpeg",
+      "/imagens/produtos/BONE-B5.jpeg",
+      "/imagens/produtos/BONE-B6.jpeg",
+    ],
+    sizes: oneSize,
+    colors: [
+      { name: "BRANCO", hex: "#ffffff" },
+      { name: "Verde", hex: "#18422b" },
+      { name: "AZUL ESCURO", hex: "#273081" },
+      { name: "AZUL CIANO", hex: "#5ebefd" },
+      { name: "Verde ESCURO", hex: "#28362e" },
+      { name: "Marrom", hex: "#492a16" },
+    ],
   },
 
   // REGATA MACHÃO
   {
     id: 43,
     name: "Regata Machão Nike",
-    price: 70.00,
+    price: 70.0,
     category: "Regatas",
     slug: "regata-machao-over-suedine",
-    images: [
-      "/imagens/produtos/regata-machao-nike.jpeg"
-    ],
+    images: ["/imagens/produtos/regata-machao-nike.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
       { name: "Mostarda", hex: "#B8860B" },
       { name: "Creme", hex: "#FFFDD0" },
-      { name: "Branco", hex: "#FFFFFF" }
-    ]
+      { name: "Branco", hex: "#FFFFFF" },
+    ],
   },
   {
     id: 44,
     name: "Regata Machão Jordan",
-    price: 70.00,
+    price: 70.0,
     category: "Regatas",
     slug: "regata-machao-over-suedine",
-    images: [
-      "/imagens/produtos/regata-machao-jordan.jpeg"
-    ],
+    images: ["/imagens/produtos/regata-machao-jordan.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
       { name: "Mostarda", hex: "#B8860B" },
       { name: "Creme", hex: "#FFFDD0" },
-      { name: "Branco", hex: "#FFFFFF" }
-    ]
+      { name: "Branco", hex: "#FFFFFF" },
+    ],
   },
   {
     id: 45,
     name: "Regata Machão",
-    price: 70.00,
+    price: 70.0,
     category: "Regatas",
     slug: "regata-machao-over-suedine",
-    images: [
-      "/imagens/produtos/regata-machao.jpeg"
-    ],
+    images: ["/imagens/produtos/regata-machao.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
       { name: "Mostarda", hex: "#B8860B" },
       { name: "Creme", hex: "#FFFDD0" },
-      { name: "Branco", hex: "#FFFFFF" }
-    ]
+      { name: "Branco", hex: "#FFFFFF" },
+    ],
   },
 
   // SHORT SARJA IMPORTADO
   {
     id: 70,
-    name: "Short sarja importado",
-    price: 80.00,
+    name: "Short Sarja CK",
+    price: 80.0,
     category: "Short Sarja",
     slug: "short-sarja",
-    images: [
-      "/imagens/produtos/short-sarja.jpeg"
-    ],
+    images: ["/imagens/produtos/short-sarja.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#1a1a1a" },
@@ -364,141 +430,145 @@ export const PRODUCTS = [
       { name: "Cinza Claro", hex: "#D3D3D3" },
       { name: "Bege Areia", hex: "#E8E4C9" },
       { name: "Kaki", hex: "#C2B280" },
-      { name: "Cinza Médio", hex: "#808080" }
-    ]
+      { name: "Cinza Médio", hex: "#808080" },
+    ],
+  },
+  {
+    id: 71,
+    name: "Short Sarja Ralph Lauren",
+    price: 80.0,
+    category: "Short Sarja",
+    slug: "short-sarja",
+    images: ["/imagens/produtos/short-sarja-ralph.jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#1a1a1a" },
+      { name: "Verde Oliva", hex: "#556B2F" },
+      { name: "Cinza Claro", hex: "#D3D3D3" },
+      { name: "Bege Areia", hex: "#E8E4C9" },
+      { name: "Kaki", hex: "#C2B280" },
+      { name: "Cinza Médio", hex: "#808080" },
+    ],
+  },
+  {
+    id: 72,
+    name: "Short Sarja Boss",
+    price: 80.0,
+    category: "Short Sarja",
+    slug: "short-sarja",
+    images: ["/imagens/produtos/short-sarja-boss.jpeg"],
+    sizes: ["M", "G", "GG"],
+    colors: [
+      { name: "Preto", hex: "#1a1a1a" },
+      { name: "Verde Oliva", hex: "#556B2F" },
+      { name: "Cinza Claro", hex: "#D3D3D3" },
+      { name: "Bege Areia", hex: "#E8E4C9" },
+      { name: "Kaki", hex: "#C2B280" },
+      { name: "Cinza Médio", hex: "#808080" },
+    ],
   },
 
   // short dryfit
-{
+  {
     id: 100,
     name: "Short Adidas Basico",
-    price: 35.00,
+    price: 35.0,
     category: "Short Dry Fit",
     slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/short-adidas-basico-branco.jpeg"
-    ],
+    images: ["/imagens/produtos/short-adidas-basico-branco.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#1a1a1a" },
       { name: "Branco", hex: "#ffffff" },
       { name: "Cinza", hex: "#727272" },
-
-    ]
+    ],
   },
   {
     id: 101,
     name: "Short Adidas 3 listras",
-    price: 35.00,
+    price: 35.0,
     category: "Short Dry Fit",
     slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/short-adidas-3listras.jpeg"
-    ],
+    images: ["/imagens/produtos/short-adidas-3listras.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#1a1a1a" },
       { name: "Branco", hex: "#ffffff" },
       { name: "grafite", hex: "#5f5f5f" },
-
-    ]
+    ],
   },
-   {
+  {
     id: 103,
     name: "Short Nike Básico",
-    price: 35.00,
+    price: 35.0,
     category: "Short Dry Fit",
     slug: "short-dry-fit",
-    images: [
-      "/imagens/produtos/short-nike-basico.jpeg"
-    ],
+    images: ["/imagens/produtos/short-nike-basico.jpeg"],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Azul marinho", hex: "#041d4d" },
       { name: "Preto", hex: "#000000" },
       { name: "Cinza Prata", hex: "#5f5f5f" },
-            { name: "grafite", hex: "#4d4848" },
+      { name: "grafite", hex: "#4d4848" },
       { name: "branco", hex: "#ffffff" },
-
-
-    ]
+    ],
   },
-  // tenis  
+  // tenis
   {
     id: 90,
     name: "Tênis Adidas 1",
-    price: 120.00,
+    price: 120.0,
     category: "Tenis Esportivo",
     slug: "tenis-esportivo",
-    images: [
-      "/imagens/produtos/tenis-adidas-1.jpeg"
-    ],
-    sizes: ["39", "40", "41","42"],
-    colors: [
-      { name: "Branco", hex: "#ffffff" },
-    ]
+    images: ["/imagens/produtos/tenis-adidas-1.jpeg"],
+    sizes: ["39", "40", "41", "42"],
+    colors: [{ name: "Branco", hex: "#ffffff" }],
   },
   {
     id: 92,
     name: "Tênis Adidas 2",
-    price: 120.00,
+    price: 120.0,
     category: "Tenis Esportivo",
     slug: "tenis-esportivo",
-    images: [
-      "/imagens/produtos/tenis-adidas-2.jpeg"
-    ],
-    sizes: ["39", "40", "41","42"],
-    colors: [
-      { name: "Cinza", hex: "#494849" },
-    ]
+    images: ["/imagens/produtos/tenis-adidas-2.jpeg"],
+    sizes: ["39", "40", "41", "42"],
+    colors: [{ name: "Cinza", hex: "#494849" }],
   },
   {
     id: 93,
     name: "Tênis Adidas 3",
-    price: 120.00,
+    price: 120.0,
     category: "Tenis Esportivo",
     slug: "tenis-esportivo",
-    images: [
-      "/imagens/produtos/tenis-adidas-3.jpeg"
-    ],
-    sizes: ["39", "40", "41","42"],
-    colors: [
-      { name: "Preto", hex: "#000000" },
-    ]
+    images: ["/imagens/produtos/tenis-adidas-3.jpeg"],
+    sizes: ["39", "40", "41", "42"],
+    colors: [{ name: "Preto", hex: "#000000" }],
   },
   {
     id: 94,
     name: "Tênis Nike ",
-    price: 120.00,
+    price: 120.0,
     category: "Tenis Esportivo",
     slug: "tenis-esportivo",
-    images: [
-      "/imagens/produtos/tenis-nike-1.jpeg"
-    ],
-    sizes: ["39", "40", "41","42"],
-    colors: [
-      { name: "Preto", hex: "#000000" },
-    ] 
+    images: ["/imagens/produtos/tenis-nike-1.jpeg"],
+    sizes: ["39", "40", "41", "42"],
+    colors: [{ name: "Preto", hex: "#000000" }],
   },
 
-// CASAQUINHOS
-{
+  // CASAQUINHOS
+  {
     id: 110,
     name: "Casaquinho",
-    price: 40.00,
+    price: 40.0,
     category: "Casaquinhos Femininos",
     slug: "casaquinho",
-    images: [
-      "/imagens/produtos/casaquinho.jpeg"
-    ],
+    images: ["/imagens/produtos/casaquinho.jpeg"],
     sizes: ["M", "G"],
     colors: [
-      { name: "Preto", hex: "#000000" }, 
+      { name: "Preto", hex: "#000000" },
       { name: "Branco", hex: "#ffffff" },
-
-    ] 
+    ],
   },
-  
 ];
 
 // 👉 COLEÇÕES/CATEGORIAS
@@ -590,7 +660,7 @@ export const CATEGORIES = [
   {
     id: "blusa-fem",
     slug: "blusa-feminina",
-    title: "Blusas Femininas",
+    title: "Blusas Poliamida",
     subtitle: "Feminilidade e leveza para qualquer ocasião",
     imgColor: "bg-gradient-to-br from-rose-400 to-rose-700",
   },
@@ -629,4 +699,11 @@ export const CATEGORIES = [
     subtitle: "O toque quentinho que o seu look precisava",
     imgColor: "bg-gradient-to-br from-cyan-900 to-black-900",
   },
+ // {
+//id: "blusa-frases",
+//slug: "blusa-frases",
+//title: "Blusas com Frases",
+//subtitle: "inspiração e elegância",
+//imgColor: "bg-gradient-to-br from-white-900 to-yellow-900",
+ // },
 ];

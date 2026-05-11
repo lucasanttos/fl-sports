@@ -69,9 +69,6 @@ export default function Navbar() {
             <Link href="/categorias" className="relative group overflow-hidden">
               <span className="hover:text-zinc-500 transition-colors duration-300">Coleções</span>
             </Link>
-            <Link href="/#produtos" onClick={(e) => handleSmoothScroll(e, 'produtos')} className="relative group overflow-hidden">
-              <span className="hover:text-zinc-500 transition-colors duration-300">Catálogo</span>
-            </Link>
             <Link href="/sobre" className="relative group overflow-hidden">
               <span className="hover:text-zinc-500 transition-colors duration-300">A Marca</span>
             </Link>
@@ -123,7 +120,6 @@ export default function Navbar() {
 
             <nav className="flex flex-col gap-6 text-2xl font-light tracking-tight">
               <Link href="/categorias" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-zinc-800 pb-4">Categorias</Link>
-              <Link href="/#produtos" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-zinc-800 pb-4">Catálogo Completo</Link>
               <Link href="/sobre" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-zinc-800 pb-4">Sobre a Marca</Link>
               <Link href="/contato" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-zinc-800 pb-4">Contato</Link>
             </nav>
