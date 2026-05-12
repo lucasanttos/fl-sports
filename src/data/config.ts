@@ -217,7 +217,9 @@ export const PRODUCTS = [
     price: 35.0,
     category: "camisa-dry-fit",
     slug: "camisa-dry-fit",
-    images: ["/imagens/produtos/camisa-adidas-3listras.jpeg"],
+    images: ["/imagens/produtos/camisa-adidas-3listras.jpeg",
+"/imagens/produtos/camisa-adidas-3listras-2.jpeg"
+    ],
     sizes: ["M", "G", "GG"],
     colors: [
       { name: "Preto", hex: "#000000" },
@@ -227,6 +229,8 @@ export const PRODUCTS = [
       { name: "Rosa", hex: "#f187ec" },
       { name: "lilás", hex: "#C8A2C8" },
       { name: "Azul claro", hex: "#4fd0f7" },
+      { name: "Verde", hex: "#6df561" },
+
     ],
   },
   {
@@ -569,6 +573,25 @@ export const PRODUCTS = [
       { name: "Branco", hex: "#ffffff" },
     ],
   },
+
+    // camisa retro
+{
+    id: 120,
+    name: "Camisa Retrô Adidas",
+    price: 40.0,
+    category: "Camisa Retrô",
+    slug: "camisa-retro",
+    images: ["/imagens/produtos/camisa-retro1.jpeg",
+      "/imagens/produtos/camisa-retro2.jpeg"
+    ],
+    
+    sizes: ["M","G","GG"],
+    colors: [
+      { name: "Preto", hex: "#000000" },
+      { name: "Branco", hex: "#ffffff" },
+    ],
+  },
+
 ];
 
 // 👉 COLEÇÕES/CATEGORIAS
@@ -698,6 +721,13 @@ export const CATEGORIES = [
     title: "Casaquinhos Femininos",
     subtitle: "O toque quentinho que o seu look precisava",
     imgColor: "bg-gradient-to-br from-cyan-900 to-black-900",
+  },
+  {
+    id: "camisa-retro",
+    slug: "camisa-retro",
+    title: "Camisas Retrô",
+    subtitle: "Moda que fica pra sempre",
+    imgColor: "bg-gradient-to-br from-orange-900 to-black-900",
   },
  // {
 //id: "blusa-frases",
