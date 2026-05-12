@@ -115,7 +115,7 @@ export const PRODUCTS = [
   {
     id: 37,
     name: "Short Nike Poliamida",
-    price: 35.0,
+    price: 45.0,
     category: "short-dry-fit",
     slug: "short-dry-fit",
     images: ["/imagens/produtos/SHORT NIKE POLIAMIDA.jpeg"],
@@ -323,7 +323,7 @@ export const PRODUCTS = [
   {
     id: 120,
     name: "Boné Premium",
-    price: 70.0,
+    price: 35.0,
     category: "acessorios",
     slug: "bone",
     images: ["/imagens/produtos/bone.jpeg"],
@@ -333,7 +333,7 @@ export const PRODUCTS = [
   {
     id: 121,
     name: "Boné Premium H",
-    price: 70.0,
+    price: 35.0,
     category: "acessorios",
     slug: "bone",
     images: [
@@ -346,7 +346,7 @@ export const PRODUCTS = [
   {
     id: 122,
     name: "Boné Premium B",
-    price: 70.0,
+    price: 35.0,
     category: "acessorios",
     slug: "bone",
     images: [
