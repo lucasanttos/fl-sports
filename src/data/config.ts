@@ -591,6 +591,25 @@ export const PRODUCTS = [
       { name: "Branco", hex: "#ffffff" },
     ],
   },
+  {
+    id: 121,
+    name: "Camisa Retrô Adidas 2",
+    price: 40.0,
+    category: "Camisa Retrô",
+    slug: "camisa-retro",
+    images: ["/imagens/produtos/camisa-retro3.jpeg",
+      "/imagens/produtos/camisa-retro2.jpeg"
+    ],
+    
+    sizes: ["M","G","GG"],
+    colors: [
+      { name: "Preto", hex: "#000000" },
+      { name: "Branco", hex: "#ffffff" },
+            { name: "Cinza", hex: "#585858" },
+                  { name: "Bege", hex: "#899169" },
+
+    ],
+  },
 
 ];
 
